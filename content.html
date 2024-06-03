@@ -1,0 +1,74 @@
+<!-- Custom HTML for Cookie Consent Bar -->
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400&display=swap" rel="stylesheet">
+<div id="cookieConsentContainer" style="position: fixed; bottom: 0; width: 100%; color: #000; text-align: center; padding: 15px 0 0; display: none; z-index: 1000; font-family: 'Dosis', sans-serif; background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 1%,rgba(0,0,0,0.15) 100%);"> 
+    <div style="padding-bottom: 15px;">
+        <hr style="border: none; border-top: 2px dashed #ccc; margin: 0;">
+    </div>
+    <p style="margin: 0; font-size: 18px; color: #000; font-weight: 400; padding: 15px 0;">
+        This website uses cookies to ensure you get the best experience on this website.
+        <a href="https://kruk.co/copyright.html#cookies" id="cookiePolicy" style="color: #4cbedf; text-decoration: none; margin-left: 10px;">Cookie Policy</a>
+        <button id="acceptCookies" style="background-color: #4cbedf; color: white; border: 1px solid #4cbedf; padding: 10px 20px; margin-left: 10px; cursor: pointer;">Accept</button>
+        <button id="cookieSettings" style="color: #4cbedf; text-decoration: none; border: 1px solid #4cbedf; padding: 10px 20px; margin-left: 10px; background-color: white; cursor: pointer;">Settings</button>
+    </p>
+</div>
+
+<!-- Cookie Settings Modal -->
+<div id="cookieSettingsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1001;">
+    <div style="background-color: #fff; padding: 20px 20px 20px 20px; margin: 10% auto; width: 80%; max-width: 400px; border-radius: 8px; font-family: 'Dosis', sans-serif;">
+        <h2 style="margin-top: 0;">Cookie Preferences</h2>
+        <label style="display: block; margin-bottom: 10px;">
+            <input type="checkbox" id="strictlyNecessary" disabled checked style="margin-right: 10px;">Strictly Necessary Cookies
+        </label>
+        <label style="display: block; margin-bottom: 10px;">
+            <input type="checkbox" id="performanceCookies" style="margin-right: 10px;">Performance Cookies
+        </label>
+        <label style="display: block; margin-bottom: 10px;">
+            <input type="checkbox" id="functionalCookies" style="margin-right: 10px;">Functional Cookies
+        </label>
+        <button id="saveSettings" style="background-color: #4cbedf; color: white; border: 1px solid #4cbedf; padding: 10px 20px; cursor: pointer;">Save</button>
+        <button id="closeSettings" style="background-color: white; color: #4cbedf; border: 1px solid #4cbedf; padding: 10px 20px; cursor: pointer;">Cancel</button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var cookieConsentContainer = document.getElementById('cookieConsentContainer');
+        var acceptCookies = document.getElementById('acceptCookies');
+        var cookieSettings = document.getElementById('cookieSettings');
+        var cookieSettingsModal = document.getElementById('cookieSettingsModal');
+        var saveSettings = document.getElementById('saveSettings');
+        var closeSettings = document.getElementById('closeSettings');
+
+        // Check if the user has already accepted cookies
+        if (!localStorage.getItem('cookiesAccepted')) {
+            cookieConsentContainer.style.display = 'block';
+        }
+
+        acceptCookies.addEventListener('click', function() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            cookieConsentContainer.style.display = 'none';
+            // Here you can add code to enable cookies or any other necessary functionality
+        });
+
+        cookieSettings.addEventListener('click', function() {
+            cookieSettingsModal.style.display = 'block';
+        });
+
+        closeSettings.addEventListener('click', function() {
+            cookieSettingsModal.style.display = 'none';
+        });
+
+        saveSettings.addEventListener('click', function() {
+            var performanceCookies = document.getElementById('performanceCookies').checked;
+            var functionalCookies = document.getElementById('functionalCookies').checked;
+
+            // Store the user's preferences in localStorage or apply them as needed
+            localStorage.setItem('performanceCookies', performanceCookies);
+            localStorage.setItem('functionalCookies', functionalCookies);
+
+            cookieSettingsModal.style.display = 'none';
+            cookieConsentContainer.style.display = 'none';
+            localStorage.setItem('cookiesAccepted', 'true');
+        });
+    });
+</script>
