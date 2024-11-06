@@ -6,7 +6,7 @@
     </div>
     <p style="margin: 0; font-size: 18px; color: #000; font-weight: 400; padding: 15px 0;">
         This website uses cookies to ensure you get the best experience on this website.
-        <a href="copyright.html#cookies" id="cookiePolicy" style="color: #4cbedf; text-decoration: none; margin-left: 10px;">Cookie Policy</a>
+        <a href="https://your_lovely_domain.com/copyright.html#cookies" id="cookiePolicy" style="color: #4cbedf; text-decoration: none; margin-left: 10px;">Cookie Policy</a>
         <button id="acceptCookies" style="background-color: #4cbedf; color: white; border: 1px solid #4cbedf; padding: 10px 20px; margin-left: 10px; cursor: pointer;">Accept</button>
         <button id="cookieSettings" style="color: #4cbedf; text-decoration: none; border: 1px solid #4cbedf; padding: 10px 20px; margin-left: 10px; background-color: white; cursor: pointer;">Settings</button>
     </p>
@@ -17,7 +17,7 @@
     <div style="background-color: #fff; padding: 20px 20px 20px 20px; margin: 10% auto; width: 80%; max-width: 400px; border-radius: 8px; font-family: 'Dosis', sans-serif;">
         <h2 style="margin-top: 0;">Cookie Preferences</h2>
         <label style="display: block; margin-bottom: 10px;">
-            <input type="checkbox" id="strictlyNecessary" disabled checked style="margin-right: 10px;">Strictly Necessary Cookies
+            <input type="checkbox" id="strictlyNecessary" disabled checked style="margin-right: 10px;">Strictly Necessary Cookies (Always Active)
         </label>
         <label style="display: block; margin-bottom: 10px;">
             <input type="checkbox" id="performanceCookies" style="margin-right: 10px;">Performance Cookies
@@ -25,7 +25,7 @@
         <label style="display: block; margin-bottom: 10px;">
             <input type="checkbox" id="functionalCookies" style="margin-right: 10px;">Functional Cookies
         </label>
-        <button id="saveSettings" style="background-color: #4cbedf; color: white; border: 1px solid #4cbedf; padding: 10px 20px; cursor: pointer;">Save</button>
+        <button id="saveSettings" style="background-color: #4cbedf; color: white; border: 1px solid #4cbedf; padding: 10px 20px; cursor: pointer;">Save Preferences</button>
         <button id="closeSettings" style="background-color: white; color: #4cbedf; border: 1px solid #4cbedf; padding: 10px 20px; cursor: pointer;">Cancel</button>
     </div>
 </div>
@@ -44,31 +44,62 @@
             cookieConsentContainer.style.display = 'block';
         }
 
+        // Accept cookies and save preference
         acceptCookies.addEventListener('click', function() {
             localStorage.setItem('cookiesAccepted', 'true');
+            // Enable cookies based on consent (can be extended for performance/functional cookies)
+            enableCookies();
             cookieConsentContainer.style.display = 'none';
-            // Here you can add code to enable cookies or any other necessary functionality
         });
 
+        // Show cookie settings modal
         cookieSettings.addEventListener('click', function() {
             cookieSettingsModal.style.display = 'block';
         });
 
+        // Close settings modal
         closeSettings.addEventListener('click', function() {
             cookieSettingsModal.style.display = 'none';
         });
 
+        // Save cookie preferences from settings modal
         saveSettings.addEventListener('click', function() {
             var performanceCookies = document.getElementById('performanceCookies').checked;
             var functionalCookies = document.getElementById('functionalCookies').checked;
 
-            // Store the user's preferences in localStorage or apply them as needed
+            // Store user preferences in localStorage
             localStorage.setItem('performanceCookies', performanceCookies);
             localStorage.setItem('functionalCookies', functionalCookies);
+
+            // Enable cookies based on selected preferences
+            if (performanceCookies) {
+                enablePerformanceCookies();
+            }
+            if (functionalCookies) {
+                enableFunctionalCookies();
+            }
 
             cookieSettingsModal.style.display = 'none';
             cookieConsentContainer.style.display = 'none';
             localStorage.setItem('cookiesAccepted', 'true');
         });
+
+        // Function to enable strictly necessary cookies
+        function enableCookies() {
+            // Add code to enable strictly necessary cookies
+            console.log("Strictly necessary cookies enabled");
+        }
+
+        // Function to enable performance cookies
+        function enablePerformanceCookies() {
+            // Add code to enable performance cookies (e.g., load analytics scripts)
+            console.log("Performance cookies enabled");
+        }
+
+        // Function to enable functional cookies
+        function enableFunctionalCookies() {
+            // Add code to enable functional cookies (e.g., load personalized content)
+            console.log("Functional cookies enabled");
+        }
     });
 </script>
