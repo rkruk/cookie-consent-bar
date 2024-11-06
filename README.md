@@ -25,7 +25,7 @@ Include the following code in the HTML file for the website to load the cookie c
     </div>
     <p style="margin: 0; font-size: 18px; color: #000; font-weight: 400; padding: 15px 0;">
         This website uses cookies to ensure you get the best experience on this website.
-        <a href="https://kruk.co/copyright.html#cookies" id="cookiePolicy" style="color: #4cbedf; text-decoration: none; margin-left: 10px;">Cookie Policy</a>
+        <a href="https://your_lovely_domain.com/copyright.html#cookies" id="cookiePolicy" style="color: #4cbedf; text-decoration: none; margin-left: 10px;">Cookie Policy</a>
         <button id="acceptCookies" style="background-color: #4cbedf; color: white; border: 1px solid #4cbedf; padding: 10px 20px; margin-left: 10px; cursor: pointer;">Accept</button>
         <button id="cookieSettings" style="color: #4cbedf; text-decoration: none; border: 1px solid #4cbedf; padding: 10px 20px; margin-left: 10px; background-color: white; cursor: pointer;">Settings</button>
     </p>
@@ -171,7 +171,7 @@ Example of the code to add:<br>
     </div>
     <p style="margin: 0; font-size: 18px; color: #000; font-weight: 400; padding: 15px 0;">
         This website uses cookies to ensure you get the best experience on this website.
-        <a href="https://kruk.co/copyright.html#cookies" id="cookiePolicy" style="color: #4cbedf; text-decoration: none; margin-left: 10px;">Cookie Policy</a>
+        <a href="https://your_lovely_domain.com/copyright.html#cookies" id="cookiePolicy" style="color: #4cbedf; text-decoration: none; margin-left: 10px;">Cookie Policy</a>
         <button id="acceptCookies" style="background-color: #4cbedf; color: white; border: 1px solid #4cbedf; padding: 10px 20px; margin-left: 10px; cursor: pointer;">Accept</button>
         <button id="cookieSettings" style="color: #4cbedf; text-decoration: none; border: 1px solid #4cbedf; padding: 10px 20px; margin-left: 10px; background-color: white; cursor: pointer;">Settings</button>
     </p>
