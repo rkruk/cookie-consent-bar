@@ -287,7 +287,7 @@ Benefits of Using Zaraz:<br>
 - Privacy: Zaraz allows you to load only the necessary scripts after receiving consent, helping to improve user privacy and comply with GDPR.<br>
 - Security: Zaraz runs third-party scripts in a secure and controlled environment, minimizing security risks from third-party tools.<br><br>
 License:<br>
-This project is licensed under the MIT License - see the LICENSE file for details.<br><br>
+This project is licensed under the Apache License - see the LICENSE file for details.<br><br>
 
 Contributing:<br>
 If you have suggestions for improvements or find any issues, feel free to submit a pull request or open an issue in the GitHub repository.<br>
